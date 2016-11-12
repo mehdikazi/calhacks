@@ -1,7 +1,3 @@
-import { Meteor } from 'meteor/meteor';
+import '../imports/api/all_registries.js';
 import '../imports/startup/accounts-onCreateUser.js';
 
-
-Meteor.startup(() => {
-  // code to run on server at startup
-});
