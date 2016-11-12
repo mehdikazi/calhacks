@@ -22,13 +22,16 @@ Meteor.methods({
     // admins = new Mongo.Collection('admins');
     // admins.insert({userId: Meteor.userId()});
 
-    users = new Mongo.Collection('users');
-    users.insert({userId: Meteor.userId()});
+    // users = new Mongo.Collection('users');
+    // users.insert({userId: Meteor.userId()});
+    var users = [Meteor.userId()];
 
-    newDate = new Date();
-    expire_date = new Date(newDate.getTime() + 30 * (24 * 60 * 60 * 1000));
+    const newDate = new Date();
+    var expire_date = new Date(newDate.getTime() + 30 * (24 * 60 * 60 * 1000));
 
     var recipient = {name: r_name, address: r_address, background: r_background};
+
+    var transactions = [];
 
     Registries.insert({
       name: name,
@@ -39,12 +42,16 @@ Meteor.methods({
       admin: Meteor.userId(),
       active_users: users,
       r_info: recipient,
+      transactions: transactions,
     });
+
+  /*
+  db.registries.insert("Barn Fire", {}, "Alex", "Kentucky", "My barn house burned down due to an unfortuante series of barbeques, culminating in a bright flash of fire that enveloped my barn, vaporizing it instantly. :(", "tomorrow")
+  */
   },
 
   'registries.remove' (regId) {
     check(regId, String);
- 
     Registries.remove(regId);
   },
 
@@ -54,12 +61,12 @@ Meteor.methods({
     if (!(users.find(userId).count() > 0)) {
       users.insert({userId: userId});
       Registries.update(
-        { regId: regId },
+        { _id: regId },
         {
           $set: {
             active_users: user;
           }
         })
     }
-  }
+  },
 });
