@@ -3,7 +3,7 @@ import { jQuery } from 'meteor/jquery';
 
 class Amazon {
 	constructor(){
-		this.access = 'AKIAJNH2NYYWF7GSCYVA';
+		this.access = access;
 		this.url = 'http://webservices.amazon.com/onca/xml';
 		this.CryptoJS = require("crypto-js");
 	}
@@ -25,7 +25,7 @@ class Amazon {
 		var b = a.join('&');
 
 		var stringToSign = 'GET\nwebservices.amazon.com\n/onca/xml\n'+b;
-		var hash = this.CryptoJS.HmacSHA256(stringToSign, 'MEn3IS3F0j1bVgbH3yMgv53HR6uaMdhQgOsRooYl');
+		var hash = this.CryptoJS.HmacSHA256(stringToSign, secret);
 		var hashInBase64 = this.CryptoJS.enc.Base64.stringify(hash);
 		// ^ following http://docs.aws.amazon.com/AWSECommerceService/latest/DG/rest-signature.html
 
