@@ -1,0 +1,20 @@
+.login {
+  /*position: center;*/
+  padding: 235px;
+/*  padding-top: 365px;
+    padding-bottom: 365px;
+    padding-right: 300px;
+    padding-left: 300px;*/
+/*    color: inherit;
+    background-color: #cccccc;*/
+}
+
+.box {
+    background-image: url("../images/disaster.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.btn {
+  position: center;
+}
