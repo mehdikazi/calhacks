@@ -244,7 +244,7 @@ body {
 @media (min-width: 576px) {
   .card-deck {
     display: table;
-    width: 100%;
+    /*width: 100%;*/
     margin-bottom: 0.75rem;
     table-layout: fixed;
     border-spacing: 1.25rem 0;
@@ -253,6 +253,7 @@ body {
     display: table-cell;
     margin-bottom: 0;
     vertical-align: top;
+    width: 320px;
   }
   .card-deck-wrapper {
   	margin-top: .50rem;
