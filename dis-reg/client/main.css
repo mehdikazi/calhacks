@@ -1,126 +1,98 @@
-/* CSS declarations go here */
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
 body {
-    font-family: sans-serif;
-    background-color: #315481;
-    background-image: linear-gradient(to bottom, #315481, #918e82 100%);
-    background-attachment: fixed;
- 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
- 
-    padding: 0;
-    margin: 0;
- 
-    font-size: 14px;
+  padding-bottom: 40px;
+  color: #5a5a5a;
 }
- 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    min-height: 100%;
-    background: white;
+
+
+body {
+  min-height: 2000px;
 }
- 
-header {
-    background: #d2edf4;
-    background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-    padding: 20px 15px 15px 15px;
-    position: relative;
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 650px;
+  margin-bottom: 60px;
 }
- 
-#login-buttons {
-    display: block;
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
 }
- 
-h1 {
-    font-size: 1.5em;
-    margin: 0;
-    margin-bottom: 10px;
-    display: inline-block;
-    margin-right: 1em;
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 650px;
+  background-color: #777;
 }
- 
-form {
-    margin-top: 10px;
-    margin-bottom: -10px;
-    position: relative;
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 650px;
 }
- 
-.new-task input {
-    box-sizing: border-box;
-    padding: 10px 0;
-    background: transparent;
-    border: none;
-    width: 100%;
-    padding-right: 80px;
-    font-size: 1em;
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
 }
- 
-.new-task input:focus{
-    outline: 0;
+.marketing h2 {
+  font-weight: normal;
 }
- 
-ul {
-    margin: 0;
-    padding: 0;
-    background: white;
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
 }
- 
-.delete {
-    float: right;
-    font-weight: bold;
-    background: none;
-    font-size: 1em;
-    border: none;
-    position: relative;
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
- 
-li {
-    position: relative;
-    list-style: none;
-    padding: 15px;
-    border-bottom: #eee solid 1px;
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
 }
- 
-li .text {
-    margin-left: 10px;
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 80px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
 }
- 
-li.checked {
-    color: #888;
-}
- 
-li.checked .text {
-    text-decoration: line-through;
-}
- 
-li.private {
-    background: #eee;
-    border-color: #ddd;
-}
- 
-header .hide-completed {
-    float: right;
-}
- 
-.toggle-private {
-    margin-left: 5px;
-}
- 
-@media (max-width: 600px) {
-    li {
-        padding: 12px 15px;
-    }
- 
-    .search {
-        width: 150px;
-        clear: both;
-    }
- 
-    .new-task input {
-        padding-bottom: 5px;
-    }
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
 }
