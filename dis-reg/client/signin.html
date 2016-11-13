@@ -36,24 +36,25 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="index.css" rel="stylesheet">
-    <script type="text/javascript" src="index.js"></script>
+    <link href="signin.css" rel="stylesheet">
+    <script type="text/javascript" src="signin.js"></script>
   </head>
 
   
   <div class="signup">
-    <form id="signup-form" onsubmit="signupSubmitted()">
+    <template name="signupForm">
+    <form id="signup-form">
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="John">
+        <input type="email" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="John">
       </div>
       <div class="form-group">
         <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Doe">
+        <input type="email" class="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Doe">
       </div>
       <div class="form-group">
         <label for="userName">User Name</label>
-        <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="John Doe">
+        <input type="email" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="John Doe">
       </div>
       <div class="form-group">
         <label for="emailAddress">Email address</label>
@@ -69,4 +70,5 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+  </template>
   </div>

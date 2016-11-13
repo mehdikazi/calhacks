@@ -44,94 +44,215 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+/***********************************************
+* Drop Down Date select script- by JavaScriptKit.com
+* This notice MUST stay intact for use
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
+***********************************************/
+
+var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+function populatedropdown(dayfield, monthfield, yearfield){
+var today=new Date()
+var dayfield=document.getElementById(dayfield)
+var monthfield=document.getElementById(monthfield)
+var yearfield=document.getElementById(yearfield)
+for (var i=0; i<31; i++)
+dayfield.options[i]=new Option(i, i+1)
+dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
+for (var m=0; m<12; m++)
+monthfield.options[m]=new Option(monthtext[m], monthtext[m])
+monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+var thisyear=today.getFullYear()
+for (var y=0; y<20; y++){
+yearfield.options[y]=new Option(thisyear, thisyear)
+thisyear+=1
+}
+yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
+}
+
+</script>
 </head>
 <body>
 
-<div class="container">
-  <h2>Create Your Registry</h2> 
+  <link href="index.css" rel="stylesheet">
+
+<body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="intro">Create Your Registry</h1>
+
+        <p class="intro">This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      </div>
+              <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container"> 
+
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Kitchen Items</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Step 1: Make Your Registry</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-          <form action="">
-            <input type="checkbox" name="vehicle" value="Bike">Microwave<br>
-            <input type="checkbox" name="vehicle" value="Car">Toaster<br>
-            <input type="checkbox" name="vehicle" value="Car">Pressure Cook<br>
-            <input type="checkbox" name="vehicle" value="Car">Crockpot<br>
-            <input type="checkbox" name="vehicle" value="Car">Dinnerware Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Glassware Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Stovetop Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Backware Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Knives Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Flatware Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Electric Water Kettle<br>
-            <input type="checkbox" name="vehicle" value="Car">Countertop Burners<br>
-            <input type="checkbox" name="vehicle" value="Car">Coffeemaker<br>
-            <input type="checkbox" name="vehicle" value="Car">Hand Mixer<br>
-            <input type="checkbox" name="vehicle" value="Car">Food Organizers<br>
-            <input type="checkbox" name="vehicle" value="Car">Kithcen Towels<br>
-            <input type="checkbox" name="vehicle" value="Car">Brita Water Filter<br>
-            <input type="checkbox" name="vehicle" value="Car">Can Opener<br>
-            <input type="checkbox" name="vehicle" value="Car">Cutting Board<br>
-            <input type="checkbox" name="vehicle" value="Car">Silverware Organizer<br>
-            <input type="checkbox" name="vehicle" value="Car">Trash Can<br>
-            <input type="checkbox" name="vehicle" value="Car">Mxing Bowl<br>
-            <input type="checkbox" name="vehicle" value="Car">Rolling pin<br>
-            <input type="checkbox" name="vehicle" value="Car">Starter Spice Set<br>
-            <input type="checkbox" name="vehicle" value="Car">Measuring Cups<br>
-            <input type="checkbox" name="vehicle" value="Car">Colander/Strainer
-          </form>
+          <form>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Registry Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Help John Doe">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Recipiant Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Shipping Address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123 Bay Street, Moreno Valley, NJ, 95616">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">End Date</label></br>
+        <form action="" name="someform">
+        <select id="daydropdown">
+        </select> 
+        <select id="monthdropdown">
+        </select> 
+        <select id="yeardropdown">
+        </select> 
+        </form>
+      <script type="text/javascript">
+      //populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+      window.onload=function(){
+      populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
+      }
+      </script>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Background Information</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="What happened? (Optional)">
+      </div>
+    </form>
         </div>
     </div>
+
+
+
+    <!-- Step 2 -->
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Bedroom</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Step 2: Pick Recommended Essentials</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-          <form action="">
-            <input type="checkbox" name="vehicle" value="Bike">Pillow<br>
-            <input type="checkbox" name="vehicle" value="Car">Pillow Sheets<br>
-            <input type="checkbox" name="vehicle" value="Car">Bed Sheets - Full<br>
-            <input type="checkbox" name="vehicle" value="Car">Comforter - Queen<br>
-            <input type="checkbox" name="vehicle" value="Car">Comforter Cover - Full/Queen<br>
-            <input type="checkbox" name="vehicle" value="Car">Dresser<br>
-            <input type="checkbox" name="vehicle" value="Car">Nightstand<br>
-            <input type="checkbox" name="vehicle" value="Car">Full Mattress<br>
-            <input type="checkbox" name="vehicle" value="Car">SmartBase Mattress Foundation<br>
-            <input type="checkbox" name="vehicle" value="Car">Lamps<br>
-            <input type="checkbox" name="vehicle" value="Car">Light Bulbs<br>
-            <input type="checkbox" name="vehicle" value="Car">Space Heater<br>
-            <input type="checkbox" name="vehicle" value="Car">Fan<br>
-            <input type="checkbox" name="vehicle" value="Car">Hamper<br>
-            <input type="checkbox" name="vehicle" value="Car">Iron<br>
-            <input type="checkbox" name="vehicle" value="Car">Iron Board
-          </form>
+              <div class="container pls">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Kitchen Essenstials</a>
+                        </h4>
+                      </div>
+                      <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                                <div class="form-group">
+                                     <form action="" class="help">
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Bike">Microwave<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Toaster<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Pressure Cook<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Crockpot<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Dinnerware Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Glassware Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Stovetop Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Backware Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Knives Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Flatware Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Electric Water Kettle<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Countertop Burners<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Coffeemaker<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Hand Mixer<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Food Organizers<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Kithcen Towels<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Brita Water Filter<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Can Opener<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Cutting Board<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Silverware Organizer<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Trash Can<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Mxing Bowl<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Rolling pin<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Starter Spice Set<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Measuring Cups<br>
+                                      <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Colander/Strainer
+                                    </form>
+                                </div>
+                        </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Bedroom Essentials</a>
+                        </h4>
+                      </div>
+                      <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body">
+                                <div class="form-group">
+                                     <form action="" class="help">
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Bike">Pillow<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Pillow Sheets<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Bed Sheets - Full<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Comforter - Queen<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Comforter Cover - Full/Queen<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Dresser<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Nightstand<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Full Mattress<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">SmartBase Mattress Foundation<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Lamps<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Light Bulbs<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Space Heater<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Fan<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Hamper<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Iron<br>
+                                        <input type="number" min="0" placeholder="0" name="vehicle" value="Car">Iron Board
+                                      </form>
+                                </div>
+                        </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+            </div>
+          </div>
         </div>
-    </div>
+
+
+
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Miscallaneous</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Step 3: Add Your Own Items</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
+        <div class="panel-body">
+          <label for="exampleInputEmail1">Enter Amazon Link</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="www.amazon.com">
+        <button type="submit" class="btn btn-primary">Add</button>
+        </div>
     </div>
   </div>
 </div>
     
 </body>
-
-
-  </html>
