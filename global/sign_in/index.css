@@ -1,0 +1,11 @@
+.signup {
+	padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 300px;
+    padding-left: 300px;
+    color: inherit;
+    background-image: url("../images/disaster.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+}
